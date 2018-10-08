@@ -5,7 +5,7 @@ var axios = require("axios");
 var cheerio = require("cheerio");
 
 // models for Mongo DB
-var db = require("./models");
+// var db = require("./models");
 
 // Web Ports
 var PORT = 3000;
