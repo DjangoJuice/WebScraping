@@ -35,15 +35,17 @@ app.get("/", function(req, res) {
 })
 
 app.get("/scrape", function(req, res) {
-    axios.get("https://www.reuters.com/finance/markets/us").then(function(res) {
+    axios.get("https://www.bbc.com/news/science_and_environment").then(function(res) {
     var $ = cheerio.load(res.data);
     //console.log("res.data", res.data.children("a").children("h3").text())
+
+    
     // Store $crape results
     var result = {};
 
     // Add the text and href of every link, and save them as properties of the result object
     //.children("a").children("h3").text()
-    result.title = $(this).children();
+    result.title = $(this).children().text();
     result.link = $(this).children("a").attr("href");
 
      console.log("testing results", result)
